@@ -26,6 +26,8 @@ let query = sparql
   ])
   .orderBy([[factoid, 'DESC']]);
 
+console.log(query.toString());
+
 fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query.toString())}`, {
       headers: { Accept: 'application/sparql-results+json' }
     })
